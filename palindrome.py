@@ -1,23 +1,13 @@
-def first(word):
-    return word[0]
-    
-def last(word):
-    return word[-1]
-
-def middle(word):
-    return word [1 : -1]
-
 def is_palindrome(word):
-    if len(word) <= 1:
-        return True 
-    if first(word) != last(word):
-        return False
-    return is_palindrome(middle(word))
+    reversed_word = word[::-1]
+    status = 1
+    if(word!=reversed_word):
+        status = 0
+    return status
 
-
-mystr = is_palindrome('raeesah')
-print(mystr)
-mystr = is_palindrome('bob')
-print(mystr)
-
-
+word = input("Enter the word: ")
+status = is_palindrome(word)
+if(status):
+    print("True")
+else:
+    print("False")
